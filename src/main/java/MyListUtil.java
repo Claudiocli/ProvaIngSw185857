@@ -13,6 +13,11 @@ public class MyListUtil
 		return list;
 	}
 
+/*
+ *	Se crescente==true la lista verrà ordinata in maniera crescente
+ *	e se, al contrario, crescente==false essa verrà ordinata in
+ *	maniera decrescente
+ */
 	public void ordinaLista(boolean crescente)	{
 		if (crescente)
 			list.sort(new Comparator<Integer>()	{
@@ -27,11 +32,7 @@ public class MyListUtil
 
 				public int compare(Integer o1, Integer o2)
 				{
-					if (o1.equals(o2))
-						return 0;
-					if (o1<o2)
-						return 1;
-					return -1;
+					return (Integer.compare(o2, o1));
 				}
 			});
 	}
